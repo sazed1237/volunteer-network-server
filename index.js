@@ -120,11 +120,7 @@ async function run() {
             res.send(result)
         })
 
-        app.get('/registerevets', async (req, res) => {
-            const decoded = req.decoded;
-            console.log(decoded)
-        })
-
+       
         app.post('/registerevets', async (req, res) => {
             const registerEvent = req.body;
             console.log(registerEvent);
@@ -143,11 +139,6 @@ async function run() {
             }
             const result = await registerEventCollections.updateOne(filter, updated)
             res.send(result)
-        })
-
-        // Register Events User Specific Filter
-        app.patch('/registerevets', async (req, res) => {
-            const id = req.params.id;
         })
 
 
